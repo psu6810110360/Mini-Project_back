@@ -16,11 +16,13 @@ export class Booking {
   @Column({ default: 'CONFIRMED' })
   status: string;
 
-  @ManyToOne(() => User)
+  
+  @ManyToOne(() => User, { onDelete: 'CASCADE' }) 
   @JoinColumn({ name: 'userId' })
   user: User;
 
-  @ManyToOne(() => Room)
+  
+  @ManyToOne(() => Room, { onDelete: 'CASCADE' }) 
   @JoinColumn({ name: 'roomId' })
   room: Room;
 }

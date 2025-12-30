@@ -50,7 +50,6 @@ export class UsersService implements OnModuleInit {
   }
 
   async remove(id: number) {
-    const user = await this.findOne(id);
-    if(user) return this.usersRepository.remove(user);
+    return this.usersRepository.delete(id);
   }
 }
